@@ -27,7 +27,12 @@ function Projects() {
               <div
                 key={index}
                 className="bg-light/70 p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
-                         flex flex-col justify-between items-center text-center w-80 h-80 mx-auto"
+                           flex flex-col justify-between items-center text-center mx-auto"
+                style={{
+                  minWidth: '260px', // Ensure the cards maintain a minimum width
+                  width: '100%', // Allow the cards to shrink within their grid
+                  maxWidth: '300px', // Set a maximum width to prevent stretching
+                }}
               >
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-700 mb-4">{project.description}</p>
@@ -40,7 +45,7 @@ function Projects() {
                       className="bg-accent text-background px-4 py-2 rounded font-semibold hover:bg-secondary transition-colors text-sm"
                       onMouseDown={() => {
                         window.open(project.link, '_blank');
-                      }}                    
+                      }}
                     >
                       GitHub
                     </a>
