@@ -1,0 +1,25 @@
+/* Example: Utility classes for hero text or subtle animations */
+
+.hero-title {
+  @apply text-4xl md:text-6xl font-extrabold leading-tight;
+}
+
+.hero-subtitle {
+  @apply text-xl md:text-2xl text-gray-700 mt-4;
+}
+
+.section-heading {
+  @apply text-3xl md:text-4xl font-bold mb-8;
+}
+
+/* Subtle fade-in for sections */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
