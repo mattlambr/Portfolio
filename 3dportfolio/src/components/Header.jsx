@@ -57,7 +57,7 @@ function Header() {
         </nav>
 
         {/* Social Icons */}
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-4" style={{ marginRight: '-10px' }}>
           <a
             href="https://github.com/mattlambr"
             target="_blank"

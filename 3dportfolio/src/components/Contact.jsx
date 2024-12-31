@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form data:', formData);
-    setStatus('Thanks for reaching out! We’ll be in touch soon.');
-    setFormData({ name: '', email: '', message: '' });
+
+    // EmailJS integration
+    emailjs.send(
+      import.meta.env.VITE_SERVICE_ID,
+      import.meta.env.VITE_TEMPLATE_ID,
+      formData,
+      import.meta.env.VITE_PUBLIC_KEY
+    )
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setStatus('Thanks for reaching out! We’ll be in touch soon.');
+        setFormData({ name: '', email: '', message: '' }); // Reset form fields
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        setStatus('Something went wrong. Please try again later.');
+      });
   };
 
   return (
@@ -76,10 +91,6 @@ function Contact() {
             <button
               type="submit"
               className="bg-accent text-background px-6 py-3 rounded font-semibold hover:bg-secondary transition-colors"
-              onMouseDown={(e) => {
-                e.preventDefault(); // Adjust if necessary for your form logic
-                console.log('Form submitted on mouse down');
-              }}    
             >
               Send Message
             </button>

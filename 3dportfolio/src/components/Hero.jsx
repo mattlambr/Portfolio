@@ -9,11 +9,10 @@ import 'react-vertical-timeline-component/style.min.css';
 
 function Hero() {
   const timelineData = [
-    { year: '2018', description: 'Started learning Web3 development' },
-    { year: '2020', description: 'Built my first dApp on Ethereum' },
-    { year: '2022', description: 'Launched a successful memecoin project' },
-    { year: '2023', description: 'Focused on AI/ML research' },
-    { year: '2024', description: 'Looking for full-time opportunities' },
+    { year: '2016', description: 'Entered Web3 as an investor' },
+    { year: '2021', description: 'Started working for Web3 Projects, began university' },
+    { year: '2023', description: 'Launched first personal Web3 Project' },
+    { year: '2025', description: '(Future) Graduated UNC-CH with BS in Statistics and Analytics' },
   ];
 
   return (
@@ -71,9 +70,6 @@ function Hero() {
                 date={item.year}
                 iconStyle={{ background: '#80a0a3', color: '#fff' }}
               >
-                <h3 className="vertical-timeline-element-title text-lg font-semibold">
-                  {item.year}
-                </h3>
                 <p className="text-sm text-gray-700">{item.description}</p>
               </VerticalTimelineElement>
             ))}
