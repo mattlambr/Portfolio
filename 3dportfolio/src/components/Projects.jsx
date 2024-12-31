@@ -4,8 +4,8 @@ function Projects() {
   const projectList = [
     {
       title: 'This Portfolio Site',
-      description: 'A sleek portfolio website created with react, vite, threeJS and tailwind.',
-      link: 'https://github.com/YourGitHub/chain-explorer',
+      description: 'A sleek and modern portfolio website built with React, Vite, Tailwind CSS, Three.js, and EmailJS, featuring interactive 3D elements, responsive design, and a contact form with email functionality.',
+      link: 'https://github.com/mattlambr/Portfolio',
     },
     {
       title: 'Speech To Text Global Hotkey',
