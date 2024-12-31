@@ -54,9 +54,14 @@ function Hero() {
 
         {/* Right Content (Timeline) */}
         <div className="w-full">
-          <h2 className="text-2xl font-bold text-dark text-center mb-4">
-            Timeline
-          </h2>
+          {/* Card for Timeline Heading */}
+          <div className="max-w-sm mx-auto bg-white/70 shadow-lg rounded-lg p-4 mb-8">
+            <h2 className="text-2xl font-bold text-center text-dark">
+              Timeline
+            </h2>
+          </div>
+
+          {/* Timeline Content */}
           <VerticalTimeline layout="1-column" className="timeline-container">
             {timelineData.map((item, index) => (
               <VerticalTimelineElement
