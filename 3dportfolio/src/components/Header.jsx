@@ -22,7 +22,7 @@ function Header() {
 
         {/* Navigation Links */}
         <nav
-          className="absolute left-1/2 transform -translate-x-1/2 flex space-x-8"
+          className="absolute left-1/2 transform -translate-x-1/2 flex space-x-4 sm:space-x-8 text-sm sm:text-base"
         >
           <a
             href="#about"
@@ -56,8 +56,11 @@ function Header() {
           </a>
         </nav>
 
-        {/* Social Icons */}
-        <div className="ml-auto flex items-center space-x-4" style={{ marginRight: '-10px' }}>
+         {/* Social Icons */}
+         <div
+          className="ml-auto flex items-center space-x-3 sm:space-x-4"
+          style={{ marginRight: '-10px' }}
+        >
           <a
             href="https://github.com/mattlambr"
             target="_blank"
@@ -68,7 +71,7 @@ function Header() {
               window.open('https://github.com/mattlambr', '_blank');
             }}
           >
-            <FaGithub size={22} />
+            <FaGithub size={18} className="sm:w-6 sm:h-6" />
           </a>
           <a
             href="https://www.linkedin.com/in/matthew-lambreth/"
@@ -80,7 +83,7 @@ function Header() {
               window.open('https://www.linkedin.com/in/matthew-lambreth/', '_blank');
             }}
           >
-            <FaLinkedin size={22} />
+            <FaLinkedin size={18} className="sm:w-6 sm:h-6" />
           </a>
         </div>
       </div>
