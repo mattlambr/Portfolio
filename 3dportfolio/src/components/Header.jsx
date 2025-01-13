@@ -62,25 +62,25 @@ function Header() {
           style={{ marginRight: '-10px' }}
         >
           <a
-            href="XXXX"
+            href="https://github.com/mattlambr"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-secondary transition-colors"
             onMouseDown={(e) => {
               e.preventDefault();
-              window.open('XXXX', '_blank');
+              window.open('https://github.com/mattlambr', '_blank');
             }}
           >
             <FaGithub size={18} className="sm:w-6 sm:h-6" />
           </a>
           <a
-            href="XXXX"
+            href="https://www.linkedin.com/in/matthew-lambreth/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-secondary transition-colors"
             onMouseDown={(e) => {
               e.preventDefault();
-              window.open('XXXX', '_blank');
+              window.open('https://www.linkedin.com/in/matthew-lambreth/', '_blank');
             }}
           >
             <FaLinkedin size={18} className="sm:w-6 sm:h-6" />

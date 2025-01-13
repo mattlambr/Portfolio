@@ -5,13 +5,13 @@ function Projects() {
     {
       title: 'This Portfolio Site',
       description: 'A sleek and modern portfolio website built with React, Vite, Tailwind CSS, Three.js, and EmailJS, featuring interactive 3D elements, responsive design, and a contact form with email functionality.',
-      link: 'XXXX',
+      link: 'https://github.com/mattlambr/Portfolio',
     },
     {
       title: 'Speech To Text Global Hotkey',
       description:
         'A simple python script that enables a global hotkey accessible from within any program to convert speech to text and copy it to clipboard for easy use. This script utilizes OpenAI Whisper for speech to text conversion.',
-      link: 'XXXX',
+      link: 'https://github.com/mattlambr/SpeechToTextGlobalHotkey',
     },
   ];
 
