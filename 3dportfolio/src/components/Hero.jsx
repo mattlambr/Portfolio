@@ -12,7 +12,7 @@ function Hero() {
     { year: '2016', description: 'Entered Web3 as an investor' },
     { year: '2021', description: 'Started working for Web3 Projects, began university' },
     { year: '2023', description: 'Launched first personal Web3 Project' },
-    { year: '2025', description: '(Future) Graduated UNC-CH with BS in Statistics and Analytics' },
+    { year: '2025', description: '(Future) Graduated XXXX with BS in Statistics and Analytics' },
   ];
 
   return (
