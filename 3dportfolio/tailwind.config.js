@@ -9,13 +9,13 @@ export default {
       colors: {
         primary: "#dadeef",   // Topography line color
         secondary: "#c0c6c8", // Light gray for body text
-        accent: "#80a0a3",    // Accent color for links and highlights
-        background: "#5a6162", // Background color
+        accent: "#4b917d",    // Accent color for links and highlights
+        background: "#111111", // Background color
         dark: "#111111",
         light: "#f9f9f9"
       },
       fontFamily: {
-        sans: ["Inter", "ui-sans-serif", "system-ui"]
+        sans: ["Public Sans", "ui-sans-serif", "system-ui"], // Add Public Sans
       },
       textShadow: {
         'black-outline': '0 2px 2px black, 0 -2px 2px black, -2px 0 2px black, 2px 0 2px black',

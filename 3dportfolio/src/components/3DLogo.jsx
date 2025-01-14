@@ -56,10 +56,10 @@ function SpinningText() {
         ]}
       />
       <meshStandardMaterial
-        color="#80a0a3"
+        color="#4b917d"
         roughness={0.1}
         metalness={1}
-        emissive="#80a0a3"
+        emissive="#4b917d"
         emissiveIntensity={0.5}
       />
     </mesh>

@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 /* Global overrides or additions */
+@font-face {
+  font-family: "Public Sans";
+  src: url("/fonts/PublicSans-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900; /* Adjust the weight range for variable fonts */
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
-  font-family: theme("fontFamily.sans");
+  font-family: "Public Sans", theme("fontFamily.sans");
 }
 
 body {

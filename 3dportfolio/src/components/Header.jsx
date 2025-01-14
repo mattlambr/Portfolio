@@ -6,18 +6,9 @@ import { motion } from 'framer-motion';
 function Header() {
   return (
     <header className="sticky top-0 w-full bg-black text-white z-50">
-      <div className="relative container mx-auto px-6 py-4 flex items-center">
-        {/* 3D Logo */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '-8%',
-            transform: 'translateY(-50%)',
-            width: '150px',
-            height: '150px',
-          }}
-        >
+      <div className="container mx-auto flex items-center justify-between px-6 py-2">
+        {/* 3D Logo Container */}
+        <div className="relative flex-shrink-0 flex items-center justify-center" style={{ width: '40px', height: '40px' }}>
           <Header3DLogo />
         </div>
 

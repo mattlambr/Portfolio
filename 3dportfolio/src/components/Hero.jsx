@@ -34,9 +34,9 @@ function Hero() {
           <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
             <img src={pfp} alt="Matt Lambreth" className="w-full h-full object-cover" />
           </div>
-          <h1 className="section-heading text-center text-dark">Matt Lambreth</h1>
+          <h1 className="section-heading text-center text-dark font-extrabold">Matt Lambreth</h1>
           <p className="mt-3 text-base text-gray-700 leading-relaxed text-center">
-            I'm a passionate developer, statistician, and data scientist with a focus on <strong>Web3</strong> and <strong>AI</strong>.
+            I'm a passionate developer, statistician, and data scientist with a focus on <strong className="text-black">Web3</strong> and <strong className="text-black">AI</strong>.
           </p>
           {/* Learn More Button with Framer Effects */}
           <motion.a
@@ -84,18 +84,24 @@ function Hero() {
                 }}
               >
                 <VerticalTimelineElement
-                  className="vertical-timeline-element--work"
                   contentStyle={{
                     background: 'rgba(255, 255, 255, 0.7)',
                     color: '#111111',
                     borderRadius: '8px', // Add rounded corners
                     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.15)', // Add shadow
                   }}
-                  contentArrowStyle={{ borderRight: '7px solid #80a0a3' }}
+                  contentArrowStyle={{ borderRight: '7px solid #4b917d' }}
                   date={item.year}
-                  iconStyle={{ background: '#80a0a3', color: '#fff' }}
+                  iconStyle={{ background: '#4b917d', color: '#fff' }}
                 >
-                  <p className="text-sm text-gray-700">{item.description}</p>
+                    <p
+                      style={{
+                        fontSize: '1rem', // Equivalent to text-lg or larger
+                        fontWeight: '700',   // Equivalent to font-bold
+                      }}
+                    >
+                      {item.description}
+                    </p>
                 </VerticalTimelineElement>
               </motion.div>
             ))}

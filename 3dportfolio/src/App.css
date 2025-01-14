@@ -9,7 +9,7 @@
 }
 
 .section-heading {
-  @apply text-3xl md:text-4xl font-bold mb-8;
+  @apply text-3xl md:text-4xl font-extrabold mb-8;
 }
 
 /* Subtle fade-in for sections */

@@ -9,7 +9,7 @@ function About() {
             About Me
           </h2>
           <p className="mt-3 text-base text-gray-700 leading-relaxed"> {/* Change text-dark to text-secondary */}
-            I'm <strong>Matt Lambreth</strong>, currently a senior at the University of North Carolina, Chapel Hill. I am pursuing a BS in Statistics and Analytics with minors in Data Science and Italian. My focuses are Web3 and AI/ML. I have been onchain since 2016 and working in crypto since 2021. I am currently looking for full-time employment offers (primarily Web3) starting Fall 2025. Below you will find my public software projects and a contact form. If you would like to learn more about any of the projects please <strong>contact me</strong> through the form below.
+            I'm <strong className="text-black">Matt Lambreth</strong>, currently a senior at the University of North Carolina, Chapel Hill. I am pursuing a BS in Statistics and Analytics with minors in Data Science and Italian. My focuses are Web3 and AI/ML. I have been onchain since 2016 and working in crypto since 2021. I am currently looking for full-time employment offers (primarily Web3) starting Fall 2025. Below you will find my public software projects and a contact form. If you would like to learn more about any of the projects please <strong className="text-black">contact me</strong> through the form below.
           </p>
         </div>
       </div>
