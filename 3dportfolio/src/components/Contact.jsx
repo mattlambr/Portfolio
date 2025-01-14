@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -88,12 +89,23 @@ function Contact() {
                 onChange={handleChange}
               ></textarea>
             </div>
-            <button
-              type="submit"
-              className="bg-accent text-background px-6 py-3 rounded font-semibold hover:bg-secondary transition-colors"
-            >
-              Send Message
-            </button>
+            <div className="flex justify-center">
+              <motion.button
+                type="submit"
+                className="bg-accent text-background px-6 py-3 rounded font-semibold hover:bg-secondary transition-colors"
+                whileHover={{
+                  scale: 1.1, // Slightly enlarges the button
+                  transition: {
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 20, // Makes the motion more springy
+                  },
+                }}
+                whileTap={{ scale: 0.95 }} // Adds a small scale-down effect when clicked
+              >
+                Send Message
+              </motion.button>
+            </div>
           </form>
           {status && (
             <p className="mt-4 text-green-600 font-medium text-center">{status}</p>

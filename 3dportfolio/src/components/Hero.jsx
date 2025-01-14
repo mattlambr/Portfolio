@@ -1,10 +1,8 @@
 import React from 'react';
 import RotatingOrb from './RotatingOrb';
 import pfp from '../assets/pfp.png'; // Import your headshot
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import { motion } from 'framer-motion'; // Import Framer Motion
 import 'react-vertical-timeline-component/style.min.css';
 
 function Hero() {
@@ -22,35 +20,43 @@ function Hero() {
 
       {/* Hero Content */}
       <div className="container mx-auto px-6 py-12 grid lg:grid-cols-2 gap-8 items-center lg:items-start">
-        {/* Left Content (Hero Box) */}
-        <div className="max-w-sm sm:max-w-md w-full bg-white/70 shadow-lg rounded-lg p-6 flex flex-col items-center">
-          {/* Circular Frame with Transparent Border */}
+        {/* Left Content with Framer Effects */}
+        <motion.div
+          className="max-w-sm sm:max-w-md w-full bg-white/70 shadow-lg rounded-lg p-6 flex flex-col items-center"
+          whileHover={{
+            scale: 1.05, // Scale up the card slightly
+            transition: { type: 'spring', stiffness: 300, damping: 20 },
+          }}
+          whileTap={{
+            scale: 0.95, // Slightly shrink on tap
+          }}
+        >
           <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-            <img
-              src={pfp}
-              alt="Matt Lambreth"
-              className="w-full h-full object-cover"
-            />
+            <img src={pfp} alt="Matt Lambreth" className="w-full h-full object-cover" />
           </div>
-
-          <h1 className="section-heading text-center text-dark">
-            Matt Lambreth
-          </h1>
+          <h1 className="section-heading text-center text-dark">Matt Lambreth</h1>
           <p className="mt-3 text-base text-gray-700 leading-relaxed text-center">
             I'm a passionate developer, statistician, and data scientist with a focus on <strong>Web3</strong> and <strong>AI</strong>.
           </p>
-          {/* Learn More Button */}
-          <a
+          {/* Learn More Button with Framer Effects */}
+          <motion.a
             href="#about"
             className="mt-6 bg-accent text-background px-6 py-3 rounded font-semibold hover:bg-secondary transition-colors"
+            whileHover={{
+              scale: 1.1, // Slightly enlarge button on hover
+              transition: { type: 'spring', stiffness: 300, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95, // Shrink slightly on click
+            }}
             onMouseDown={(e) => {
               e.preventDefault();
               window.location.href = '#about';
             }}
           >
             Learn More
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
 
         {/* Right Content (Timeline) */}
         <div className="w-full">
@@ -64,19 +70,34 @@ function Hero() {
           {/* Timeline Content */}
           <VerticalTimeline layout="1-column" className="timeline-container">
             {timelineData.map((item, index) => (
-              <VerticalTimelineElement
+              <motion.div
                 key={index}
-                className="vertical-timeline-element--work"
-                contentStyle={{
-                  background: 'rgba(255, 255, 255, 0.7)',
-                  color: '#111111',
+                whileHover={{
+                  scale: 1.05,
+                  transition: { type: 'spring', stiffness: 300, damping: 20 },
                 }}
-                contentArrowStyle={{ borderRight: '7px solid #80a0a3' }}
-                date={item.year}
-                iconStyle={{ background: '#80a0a3', color: '#fff' }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                style={{
+                  marginBottom: '24px', // Match the spacing of VerticalTimelineElement
+                }}
               >
-                <p className="text-sm text-gray-700">{item.description}</p>
-              </VerticalTimelineElement>
+                <VerticalTimelineElement
+                  className="vertical-timeline-element--work"
+                  contentStyle={{
+                    background: 'rgba(255, 255, 255, 0.7)',
+                    color: '#111111',
+                    borderRadius: '8px', // Add rounded corners
+                    boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.15)', // Add shadow
+                  }}
+                  contentArrowStyle={{ borderRight: '7px solid #80a0a3' }}
+                  date={item.year}
+                  iconStyle={{ background: '#80a0a3', color: '#fff' }}
+                >
+                  <p className="text-sm text-gray-700">{item.description}</p>
+                </VerticalTimelineElement>
+              </motion.div>
             ))}
           </VerticalTimeline>
         </div>

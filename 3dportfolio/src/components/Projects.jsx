@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 function Projects() {
   const projectList = [
@@ -19,39 +20,44 @@ function Projects() {
     <section id="projects" className="w-full py-16 fade-in">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto bg-white/70 shadow-lg rounded-lg p-6">
-          <h2 className="section-heading text-center text-dark">
-            Featured Projects
-          </h2>
+          <h2 className="section-heading text-center text-dark">Featured Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 justify-center">
             {projectList.map((project, index) => (
-              <div
+              // Motion wrapper for the project card
+              <motion.div
                 key={index}
-                className="bg-light/70 p-6 rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
-                           flex flex-col justify-between items-center text-center mx-auto"
+                className="bg-light/70 p-6 rounded-lg shadow-md flex flex-col justify-between items-center text-center mx-auto"
                 style={{
-                  minWidth: '260px', // Ensure the cards maintain a minimum width
-                  width: '100%', // Allow the cards to shrink within their grid
-                  maxWidth: '300px', // Set a maximum width to prevent stretching
+                  minWidth: '260px',
+                  width: '100%',
+                  maxWidth: '300px',
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { type: 'spring', stiffness: 300, damping: 20 },
                 }}
               >
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-700 mb-4">{project.description}</p>
                 <div className="flex items-center space-x-4 mt-auto">
                   {project.link && (
-                    <a
+                    // Motion wrapper for the GitHub button
+                    <motion.a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-accent text-background px-4 py-2 rounded font-semibold hover:bg-secondary transition-colors text-sm"
-                      onMouseDown={() => {
-                        window.open(project.link, '_blank');
+                      whileHover={{
+                        scale: 1.1,
+                        transition: { type: 'spring', stiffness: 300, damping: 20 },
                       }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       GitHub
-                    </a>
+                    </motion.a>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

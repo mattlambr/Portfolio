@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import Header3DLogo from './3DLogo.jsx';
+import { motion } from 'framer-motion';
 
 function Header() {
   return (
@@ -22,69 +23,83 @@ function Header() {
 
         {/* Navigation Links */}
         <nav
-          className="absolute left-1/2 transform -translate-x-1/2 flex space-x-4 sm:space-x-8 text-sm sm:text-base"
+          className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-4 sm:space-x-8 text-sm sm:text-base"
         >
-          <a
-            href="#about"
-            className="text-primary hover:text-accent transition-all transform hover:scale-105"
-            onMouseDown={(e) => {
-              e.preventDefault();
-              window.location.href = '#about';
-            }}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className="text-primary hover:text-accent transition-all transform hover:scale-105"
-            onMouseDown={(e) => {
-              e.preventDefault();
-              window.location.href = '#projects';
-            }}
-          >
-            Projects
-          </a>
-          <a
-            href="#contact"
-            className="text-primary hover:text-accent transition-all transform hover:scale-105"
-            onMouseDown={(e) => {
-              e.preventDefault();
-              window.location.href = '#contact';
-            }}
-          >
-            Contact
-          </a>
+          {['About', 'Projects', 'Contact'].map((link, index) => (
+            <React.Fragment key={link}>
+              <motion.a
+                href={`#${link.toLowerCase()}`}
+                className="text-primary hover:text-accent"
+                whileHover={{
+                  scale: 1.1,
+                  transition: { type: 'spring', stiffness: 300, damping: 20 },
+                }}
+                whileTap={{
+                  scale: 0.95,
+                }}
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  window.location.href = `#${link.toLowerCase()}`;
+                }}
+              >
+                {link}
+              </motion.a>
+
+              {/* Lines now always visible */}
+              {index < 2 && (
+                <span className="w-px h-5 bg-gray-500 inline-block"></span>
+              )}
+            </React.Fragment>
+          ))}
         </nav>
 
-         {/* Social Icons */}
-         <div
+
+        {/* Social Icons */}
+        <div
           className="ml-auto flex items-center space-x-3 sm:space-x-4"
           style={{ marginRight: '-10px' }}
         >
-          <a
+          <motion.a
             href="https://github.com/mattlambr"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-secondary transition-colors"
+            className="text-white hover:text-secondary"
+            whileHover={{
+              scale: 1.1,
+              transition: { type: 'spring', stiffness: 300, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+            }}
             onMouseDown={(e) => {
               e.preventDefault();
               window.open('https://github.com/mattlambr', '_blank');
             }}
           >
             <FaGithub size={18} className="sm:w-6 sm:h-6" />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
             href="https://www.linkedin.com/in/matthew-lambreth/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white hover:text-secondary transition-colors"
+            className="text-white hover:text-secondary"
+            whileHover={{
+              scale: 1.1,
+              transition: { type: 'spring', stiffness: 300, damping: 20 },
+            }}
+            whileTap={{
+              scale: 0.95,
+            }}
             onMouseDown={(e) => {
               e.preventDefault();
-              window.open('https://www.linkedin.com/in/matthew-lambreth/', '_blank');
+              window.open(
+                'https://www.linkedin.com/in/matthew-lambreth/',
+                '_blank'
+              );
             }}
           >
             <FaLinkedin size={18} className="sm:w-6 sm:h-6" />
-          </a>
+          </motion.a>
         </div>
       </div>
     </header>
