@@ -41,7 +41,7 @@ function Contact() {
   return (
     <section id="contact" className="w-full py-16">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto bg-gray-200/70 shadow-lg rounded-lg p-8">
+        <div className="max-w-4xl mx-auto bg-white/70 shadow-lg rounded-lg p-8">
           <h2 className="section-heading text-center text-dark">Get in Touch</h2>
           <p className="text-center text-gray-700 mb-8">
             Have questions or want to discuss a project? Drop me a line!
